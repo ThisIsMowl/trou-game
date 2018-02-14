@@ -1,20 +1,32 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import {} from '../actions/common'
+import common from '../actions/common'
+import Counter from './gamePieces/Counter'
 
 const mapDispatch = dispatch => ({
   appLoad: () =>
-    dispatch()
+    dispatch(common.appLoaded()),
 })
 
 class Hello extends React.Component {
   constructor() {
     super()
+    this.appLoad = () => this.props.appLoad()
   }
+
+  componentWillMount() {
+    this.appLoad()
+  }
+
   render() {
-    return (<h1>Hello</h1>)
+    return (
+      <div>
+        <Counter player={1} />
+        <Counter player={2} />
+      </div>
+    )
   }
 }
 
-export default Hello
+export default connect(() => ({}), mapDispatch)(Hello)

@@ -1,0 +1,18 @@
+.counter {
+  height:60px;
+  width:60px;
+  border-radius: 100%;
+  background-color: brown;
+}
+
+.counter--player1 {
+  background-color: rgb(72,120,205);
+}
+
+.counter--player2 {
+  background-color: rgb(254, 253, 51);
+}
+
+.counter:hover {
+  cursor: pointer;
+}

@@ -3,6 +3,7 @@ module.exports = {
     "rules": {
         "semi": "off",
         "linebreak-style": "off",
-        "react/jsx-filename-extension": "off"
+        "react/jsx-filename-extension": "off",
+        "react/prop-types": "off"
     }
 };
