@@ -1,11 +1,15 @@
 .piece-holder {
   height: 100px;
   width: 100px;
-  border-width: 0 2.5px 2.5px 2.5px;
+  border-width: 0 2.5px 2.5px 0;
   border-style: solid;
   border-color: black;
 }
 
 .top-row {
   border-top: 2.5px solid transparent;
+}
+
+.left-border {
+  border-left: 2.5px solid black;
 }
