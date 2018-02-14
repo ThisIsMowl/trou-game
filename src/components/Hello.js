@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import common from '../actions/common'
-import Counter from './gamePieces/Counter'
+import CounterHolder from './gamePieces/CounterHolder'
 
 const mapDispatch = dispatch => ({
   appLoad: () =>
@@ -22,8 +22,8 @@ class Hello extends React.Component {
   render() {
     return (
       <div>
-        <Counter player={1} />
-        <Counter player={2} />
+        <CounterHolder player={1} top />
+        <CounterHolder player={1} />
       </div>
     )
   }
