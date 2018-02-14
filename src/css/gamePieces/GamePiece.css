@@ -1,4 +1,4 @@
-.counter {
+.game-piece {
   width: 100%;
   height: 100%;
   border-radius: 100%;
@@ -6,18 +6,18 @@
 }
 
 /* i.e. no counter */
-.counter--player0 {
+.game-piece--player0 {
   background-color: transparent;
 }
 
-.counter--player1 {
+.game-piece--player1 {
   background-color: rgb(72,120,205);
 }
 
-.counter--player2 {
+.game-piece--player2 {
   background-color: rgb(254, 253, 51);
 }
 
-.counter:hover {
+.game-piece:hover {
   cursor: pointer;
 }
