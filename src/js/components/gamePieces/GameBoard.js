@@ -17,12 +17,7 @@ class GameBoard extends React.Component {
     if (boardState && boardState.length === 6) {
       return (
         <div className="game-board">
-          <BoardRow top data={boardState[0]} />
-          <BoardRow data={boardState[1]} />
-          <BoardRow data={boardState[2]} />
-          <BoardRow data={boardState[3]} />
-          <BoardRow data={boardState[4]} />
-          <BoardRow data={boardState[5]} />
+          {boardState.map((x, i) => (<BoardRow key={`row-${i}`} top={i === 0} data={x} />))}
         </div>
       )
     }

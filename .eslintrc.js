@@ -5,5 +5,6 @@ module.exports = {
         "linebreak-style": "off",
         "react/jsx-filename-extension": "off",
         "react/prop-types": "off",
+        "jsx-a11y/href-no-hash": "off",
     }
 };
