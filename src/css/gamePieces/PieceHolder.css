@@ -13,3 +13,7 @@
 .left-border {
   border-left: 2.5px solid black;
 }
+
+.no-border {
+  border-color: transparent;
+}

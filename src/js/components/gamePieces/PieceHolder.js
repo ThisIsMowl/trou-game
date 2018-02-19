@@ -6,12 +6,13 @@ import '../../../css/gamePieces/PieceHolder.css'
 const PieceHolder = (props) => {
   const top = props.top ? 'top-row' : ''
   const left = props.left ? 'left-border' : ''
-  const className = `piece-holder ${top} ${left}`
+  const noBorder = props.noBorder ? 'no-border' : ''
+  const className = `piece-holder ${top} ${left} ${noBorder}`
 
   return (
     <div>
       <div className={className}>
-        <GamePiece player={props.player} />
+        <GamePiece player={props.player} inPlay={props.inPlay} />
       </div>
     </div>
   )

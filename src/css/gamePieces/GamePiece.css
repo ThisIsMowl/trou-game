@@ -2,13 +2,10 @@
   width: 100%;
   height: 100%;
   border-radius: 100%;
-  background-color: brown;
+  background-color: transparent;
 }
 
 /* i.e. no counter */
-.game-piece--player0 {
-  background-color: transparent;
-}
 
 .game-piece--player1 {
   background-color: rgb(72,120,205);
@@ -18,6 +15,20 @@
   background-color: rgb(254, 253, 51);
 }
 
-.game-piece:hover {
+/* special class for dropping row */
+
+.in-play {
+  background-color: gray;
+}
+
+.in-play:hover {
   cursor: pointer;
+}
+
+.in-play--player1:hover {
+  background-color: rgb(72,120,205);
+}
+
+.in-play--player2:hover {
+  background-color: rgb(254, 253, 51);
 }
