@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import BoardRow from './BoardRow'
+import BoardColumn from './BoardColumn'
 import PlayingRow from './PlayingRow'
 import '../../../css/gamePieces/GameBoard.css'
 
@@ -17,11 +17,13 @@ class GameBoard extends React.Component {
       currentPlayer,
     } = this.props
 
-    if (boardState && boardState.length === 6) {
+    if (boardState && boardState.length === 7) {
       return (
         <div className="game-board">
-          <PlayingRow inPlay={currentPlayer} />
-          {boardState.map((x, i) => (<BoardRow key={`row-${i}`} top={i === 0} data={x} />))}
+          <PlayingRow activePlayer={currentPlayer} />
+          <div className="columns-holder">
+            {boardState.map((x, i) => (<BoardColumn key={`column-${i}`} left={i === 0} data={x} />))}
+          </div>
         </div>
       )
     }

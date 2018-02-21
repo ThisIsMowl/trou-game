@@ -1,5 +1,5 @@
 const defaultState = {
-  counterPosition: 0,
+  currentPiece: 0,
 }
 
 const gameplayReducer = (state = defaultState, action) => {

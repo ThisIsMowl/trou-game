@@ -1,17 +1,27 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
 import PieceHolder from './../gamePieces/PieceHolder'
+import SelectionPiece from './../gamePieces/SelectionPiece'
 
-const PlayingRow = props => (
-  <div className="board-row">
-    <PieceHolder noBorder inPlay={props.inPlay} />
-    <PieceHolder noBorder inPlay={props.inPlay} />
-    <PieceHolder noBorder inPlay={props.inPlay} />
-    <PieceHolder noBorder inPlay={props.inPlay} />
-    <PieceHolder noBorder inPlay={props.inPlay} />
-    <PieceHolder noBorder inPlay={props.inPlay} />
-    <PieceHolder noBorder inPlay={props.inPlay} />
-  </div>
-)
+const mapState = state => ({
+  currentPiece: state.gameplayReducer.currentPiece,
+})
 
-export default PlayingRow
+const PlayingRow = (props) => {
+  const {
+    currentPiece,
+  } = props
+
+  return (
+    <div className="columns-holder">
+      {[1, 1, 1, 1, 1, 1, 1].map((x, i) => (
+        <PieceHolder noBorder>
+          <SelectionPiece activePlayer={props.activePlayer} active={i === currentPiece} />
+        </PieceHolder>
+      ))}
+    </div>
+  )
+}
+
+export default connect(mapState, () => ({}))(PlayingRow)

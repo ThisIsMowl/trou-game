@@ -1,5 +1,4 @@
 import React from 'react'
-import GamePiece from './GamePiece'
 
 import '../../../css/gamePieces/PieceHolder.css'
 
@@ -10,10 +9,8 @@ const PieceHolder = (props) => {
   const className = `piece-holder ${top} ${left} ${noBorder}`
 
   return (
-    <div>
-      <div className={className}>
-        <GamePiece player={props.player} inPlay={props.inPlay} />
-      </div>
+    <div className={className}>
+      {props.children}
     </div>
   )
 }
