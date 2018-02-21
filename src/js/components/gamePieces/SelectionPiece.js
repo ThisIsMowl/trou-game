@@ -2,12 +2,14 @@ import React from 'react'
 
 const SelectionPiece = (props) => {
 
-  const activePlayerClass = (props.activePlayer && props.active) ? `game-piece--player${props.activePlayer}` : ''
+  const activePlayerClass = props.activePlayer ? `game-piece--player${props.activePlayer}` : ''
 
-  const className = `game-piece ${activePlayerClass}`
+  const classestoAdd = props.active ? activePlayerClass : 'selection-piece'
+
+  const className = `game-piece ${classestoAdd}`
 
   return (
-    <div className={className} />
+    <div className={className} id={props.id} />
   )
 }
 

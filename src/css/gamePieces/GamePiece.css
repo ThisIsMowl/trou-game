@@ -7,6 +7,7 @@
 
 /* i.e. no counter */
 
+
 .game-piece--player1 {
   background-color: rgb(72,120,205);
 }
@@ -15,20 +16,10 @@
   background-color: rgb(254, 253, 51);
 }
 
-/* special class for dropping row */
-
-.in-play {
+.selection-piece {
   background-color: gray;
 }
 
-.in-play:hover {
+.selection-piece:hover {
   cursor: pointer;
-}
-
-.in-play--player1:hover {
-  background-color: rgb(72,120,205);
-}
-
-.in-play--player2:hover {
-  background-color: rgb(254, 253, 51);
 }
