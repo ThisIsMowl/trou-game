@@ -2,6 +2,7 @@ import keyTypes from '../keyTypes'
 
 const defaultState = {
   currentPiece: 0,
+  highlightedField: [0,0]
 }
 
 const gameplayReducer = (state = defaultState, action) => {
@@ -10,6 +11,11 @@ const gameplayReducer = (state = defaultState, action) => {
       return {
         ...state,
         currentPiece: action.payload,
+      }
+    case keyTypes.CHANGE_HIGHLIGHTED_FIELD:
+      return {
+        ...state,
+        highlightedField: [action.x, action.y],
       }
     default:
       return state

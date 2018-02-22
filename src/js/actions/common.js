@@ -10,7 +10,14 @@ const changeActivePiece = (column, payload) => ({
   payload,
 })
 
+const changeHighlightedField = (x, y) => ({
+  type: keyTypes.CHANGE_HIGHLIGHTED_FIELD,
+  x,
+  y,
+})
+
 export default {
   appLoaded,
   changeActivePiece,
+  changeHighlightedField,
 }
