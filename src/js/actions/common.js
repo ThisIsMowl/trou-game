@@ -4,8 +4,9 @@ const appLoaded = () => ({
   type: keyTypes.APP_LOADED,
 })
 
-const changeActivePiece = payload => ({
+const changeActivePiece = (column, payload) => ({
   type: keyTypes.CHANGE_CURRENT_ACTIVE_PIECE,
+  column,
   payload,
 })
 

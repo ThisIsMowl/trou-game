@@ -5,18 +5,19 @@ import common from '../../actions/common'
 
 const mapState = state => ({
   currentPiece: state.gameplayReducer.currentPiece,
+  boardState: state.common.boardState,
 })
 
 const mapDispatch = dispatch => ({
-  changeActivePiece: payload =>
-    dispatch(common.changeActivePiece(payload)),
+  changeActivePiece: (column, payload) =>
+    dispatch(common.changeActivePiece(column, payload)),
 })
 
 class SelectionPiece extends React.Component {
 
   constructor() {
     super()
-    this.changeActivePiece = (payload) => this.props.changeActivePiece(payload)
+    this.changeActivePiece = (column, payload) => this.props.changeActivePiece(column, payload)
   }
 
   render() {
@@ -27,11 +28,12 @@ class SelectionPiece extends React.Component {
     const className = `game-piece ${classestoAdd}`
 
     const {
-      id
+      id,
+      boardState,
     } = this.props
 
     return (
-      <div className={className} onMouseOver={() => this.changeActivePiece(id)} />
+      <div className={className} onMouseOver={() => this.changeActivePiece(boardState[id], id)} />
     )
   }
 }
