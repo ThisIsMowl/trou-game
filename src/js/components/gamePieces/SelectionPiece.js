@@ -1,16 +1,39 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-const SelectionPiece = (props) => {
+import common from '../../actions/common'
 
-  const activePlayerClass = props.activePlayer ? `game-piece--player${props.activePlayer}` : ''
+const mapState = state => ({
+  currentPiece: state.gameplayReducer.currentPiece,
+})
 
-  const classestoAdd = props.active ? activePlayerClass : 'selection-piece'
+const mapDispatch = dispatch => ({
+  changeActivePiece: payload =>
+    dispatch(common.changeActivePiece(payload)),
+})
 
-  const className = `game-piece ${classestoAdd}`
+class SelectionPiece extends React.Component {
 
-  return (
-    <div className={className} id={props.id} />
-  )
+  constructor() {
+    super()
+    this.changeActivePiece = (payload) => this.props.changeActivePiece(payload)
+  }
+
+  render() {
+    const activePlayerClass = this.props.activePlayer ? `game-piece--player${this.props.activePlayer}` : ''
+
+    const classestoAdd = (this.props.currentPiece === this.props.id) ? activePlayerClass : 'selection-piece'
+
+    const className = `game-piece ${classestoAdd}`
+
+    const {
+      id
+    } = this.props
+
+    return (
+      <div className={className} onMouseOver={() => this.changeActivePiece(id)} />
+    )
+  }
 }
 
-export default SelectionPiece
+export default connect(mapState, mapDispatch)(SelectionPiece)
