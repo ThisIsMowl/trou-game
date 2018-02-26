@@ -11,6 +11,7 @@ const reducer = combineReducers({
 
 const middleware = applyMiddleware(
   _middleware.boardCheck,
+  _middleware.dropCounterMiddleware,
 )
 
 /* eslint-disable no-underscore-dangle */

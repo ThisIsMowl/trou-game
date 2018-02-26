@@ -9,6 +9,23 @@ const boardCheck = store => next => (action) => {
   next(action)
 }
 
+const dropCounterMiddleware = store => next => (action) => {
+  if (action.type === keyTypes.DROP_COUNTER) {
+    if (action.y && action.y !== -1) {
+      const { currentPlayer } = store.getState().common
+      let { boardState } = store.getState().common
+
+      boardState[action.x][action.y] = currentPlayer
+
+      action.payload = boardState
+    } else {
+      console.log('column is full')
+    }
+  }
+  next(action)
+}
+
 export default {
   boardCheck,
+  dropCounterMiddleware,
 }

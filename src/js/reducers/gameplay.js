@@ -17,6 +17,12 @@ const gameplayReducer = (state = defaultState, action) => {
         ...state,
         targetField: [action.x, action.y],
       }
+    // bugfix to make sure next piece can be dropped in same column as last one
+    case keyTypes.DROP_COUNTER:
+      return {
+        ...state,
+        targetField: [state.targetField[0], state.targetField[1] - 1],
+      }
     default:
       return state
   }

@@ -16,8 +16,15 @@ const changeTargetField = (x, y) => ({
   y,
 })
 
+const dropCounter = (x, y) => ({
+  type: keyTypes.DROP_COUNTER,
+  x,
+  y,
+})
+
 export default {
   appLoaded,
   changeTargetColumn,
   changeTargetField,
+  dropCounter,
 }
