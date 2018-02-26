@@ -4,12 +4,12 @@ const defaultState = {
   loaded: false,
   boardState: [
     [0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 1],
-    [0, 0, 0, 0, 2, 2],
-    [0, 0, 0, 1, 1, 1],
-    [0, 0, 2, 2, 2, 2],
-    [0, 1, 1, 1, 1, 1],
-    [2, 2, 2, 2, 2, 2],
+    [0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0],
   ],
   currentPlayer: 1,
 }
@@ -24,7 +24,7 @@ const common = (state = defaultState, action) => {
     case keyTypes.DROP_COUNTER:
       return {
         ...state,
-        currentPlayer: state.currentPlayer === 1 ? 2 : 1,
+        currentPlayer: !action.full ? (state.currentPlayer === 1 ? 2 : 1) : state.currentPlayer,
         boardState: action.payload ? action.payload : state.boardState,
       }
     default:

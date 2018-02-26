@@ -11,7 +11,7 @@ const boardCheck = store => next => (action) => {
 
 const dropCounterMiddleware = store => next => (action) => {
   if (action.type === keyTypes.DROP_COUNTER) {
-    if (action.y && action.y !== -1) {
+    if (action.y !== -1) {
       const { currentPlayer } = store.getState().common
       let { boardState } = store.getState().common
 
@@ -19,7 +19,8 @@ const dropCounterMiddleware = store => next => (action) => {
 
       action.payload = boardState
     } else {
-      console.log('column is full')
+      action.full = true
+      console.log('full')
     }
   }
   next(action)

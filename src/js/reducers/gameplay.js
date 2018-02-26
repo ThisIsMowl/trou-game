@@ -21,7 +21,7 @@ const gameplayReducer = (state = defaultState, action) => {
     case keyTypes.DROP_COUNTER:
       return {
         ...state,
-        targetField: [state.targetField[0], state.targetField[1] - 1],
+        targetField: state.targetField[1] !== -1 ? [state.targetField[0], state.targetField[1] - 1] : state.targetField,
       }
     default:
       return state
