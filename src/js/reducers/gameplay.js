@@ -1,21 +1,21 @@
 import keyTypes from '../keyTypes'
 
 const defaultState = {
-  currentPiece: 0,
-  highlightedField: [0,0]
+  targetColumn: 0,
+  targetField: [0, 0],
 }
 
 const gameplayReducer = (state = defaultState, action) => {
   switch (action.type) {
-    case keyTypes.CHANGE_CURRENT_ACTIVE_PIECE:
+    case keyTypes.CHANGE_TARGET_COLUMN:
       return {
         ...state,
-        currentPiece: action.payload,
+        targetColumn: action.payload,
       }
-    case keyTypes.CHANGE_HIGHLIGHTED_FIELD:
+    case keyTypes.CHANGE_TARGET_FIELD:
       return {
         ...state,
-        highlightedField: [action.x, action.y],
+        targetField: [action.x, action.y],
       }
     default:
       return state

@@ -4,20 +4,20 @@ const appLoaded = () => ({
   type: keyTypes.APP_LOADED,
 })
 
-const changeActivePiece = (column, payload) => ({
-  type: keyTypes.CHANGE_CURRENT_ACTIVE_PIECE,
+const changeTargetColumn = (column, payload) => ({
+  type: keyTypes.CHANGE_TARGET_COLUMN,
   column,
   payload,
 })
 
-const changeHighlightedField = (x, y) => ({
-  type: keyTypes.CHANGE_HIGHLIGHTED_FIELD,
+const changeTargetField = (x, y) => ({
+  type: keyTypes.CHANGE_TARGET_FIELD,
   x,
   y,
 })
 
 export default {
   appLoaded,
-  changeActivePiece,
-  changeHighlightedField,
+  changeTargetColumn,
+  changeTargetField,
 }

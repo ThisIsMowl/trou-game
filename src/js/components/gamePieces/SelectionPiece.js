@@ -4,26 +4,26 @@ import { connect } from 'react-redux'
 import common from '../../actions/common'
 
 const mapState = state => ({
-  currentPiece: state.gameplayReducer.currentPiece,
+  targetColumn: state.gameplayReducer.targetColumn,
   boardState: state.common.boardState,
 })
 
 const mapDispatch = dispatch => ({
-  changeActivePiece: (column, payload) =>
-    dispatch(common.changeActivePiece(column, payload)),
+  changeTargetColumn: (column, payload) =>
+    dispatch(common.changeTargetColumn(column, payload)),
 })
 
 class SelectionPiece extends React.Component {
 
   constructor() {
     super()
-    this.changeActivePiece = (column, payload) => this.props.changeActivePiece(column, payload)
+    this.changeTargetColumn = (column, payload) => this.props.changeTargetColumn(column, payload)
   }
 
   render() {
     const activePlayerClass = this.props.activePlayer ? `game-piece--player${this.props.activePlayer}` : ''
 
-    const classestoAdd = (this.props.currentPiece === this.props.id) ? activePlayerClass : 'selection-piece'
+    const classestoAdd = (this.props.targetColumn === this.props.id) ? activePlayerClass : 'selection-piece'
 
     const className = `game-piece ${classestoAdd}`
 
@@ -33,7 +33,7 @@ class SelectionPiece extends React.Component {
     } = this.props
 
     return (
-      <div className={className} onMouseOver={() => this.changeActivePiece(boardState[id], id)} />
+      <div className={className} onMouseOver={() => this.changeTargetColumn(boardState[id], id)} />
     )
   }
 }
