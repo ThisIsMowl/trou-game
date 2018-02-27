@@ -4,6 +4,10 @@ const appLoaded = () => ({
   type: keyTypes.APP_LOADED,
 })
 
+const changePlayer = () => ({
+  type: keyTypes.CHANGE_PLAYER,
+})
+
 const changeTargetColumn = (column, payload) => ({
   type: keyTypes.CHANGE_TARGET_COLUMN,
   column,
@@ -27,4 +31,5 @@ export default {
   changeTargetColumn,
   changeTargetField,
   dropCounter,
+  changePlayer,
 }

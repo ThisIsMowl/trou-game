@@ -24,8 +24,9 @@ const dropCounterMiddleware = store => next => (action) => {
 
       // Reasign blank target field with counter.
       boardState[action.x][action.y] = currentPlayer
-
       action.payload = boardState
+      // Change player
+      store.dispatch(common.changePlayer())
     }
   }
   next(action)

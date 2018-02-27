@@ -24,8 +24,12 @@ const common = (state = defaultState, action) => {
     case keyTypes.DROP_COUNTER:
       return {
         ...state,
-        currentPlayer: !action.full ? (state.currentPlayer === 1 ? 2 : 1) : state.currentPlayer,
         boardState: action.payload ? action.payload : state.boardState,
+      }
+    case keyTypes.CHANGE_PLAYER:
+      return {
+        ...state,
+        currentPlayer: state.currentPlayer === 1 ? 2 : 1,
       }
     default:
       return state
