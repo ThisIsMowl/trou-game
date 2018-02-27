@@ -32,6 +32,28 @@ const dropCounterMiddleware = store => next => (action) => {
   next(action)
 }
 
+const checkWinState = (gameBoard, playerNo) => {
+  let count = 0
+  // Check horizontally
+
+  for (let i = 0; i < 7; i++) {
+    for(let j = 0; j < 6; j++) {
+      count = (gameBoard[i][j] === playerNo) ? count + 1 : 0
+      if (count === 4) {} //win condition
+    }
+  }
+
+  // Check vertically
+  for (let j = 0; j < 6; j++) {
+    for(let i = 0; i < 7; i++) {
+      count = (gameBoard[i][j] === playerNo) ? count + 1 : 0
+      if (count === 4) {} //win condition
+    }
+  }
+
+  // Check diagonally
+}
+
 export default {
   boardCheck,
   dropCounterMiddleware,
