@@ -17,3 +17,31 @@
 .no-border {
   border-color: transparent;
 }
+
+@media screen and (max-width: 992px) {
+  .piece-holder {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .piece-holder {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .piece-holder {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .piece-holder {
+    width: 45px;
+    height: 45px;
+  }
+}
