@@ -1,7 +1,6 @@
 import keyTypes from '../keyTypes'
 
 const defaultState = {
-  loaded: false,
   boardState: [
     [0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0],
@@ -12,6 +11,7 @@ const defaultState = {
     [0, 0, 0, 0, 0, 0],
   ],
   currentPlayer: 1,
+  gameActive: true,
 }
 
 const common = (state = defaultState, action) => {
