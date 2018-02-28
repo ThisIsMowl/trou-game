@@ -16,11 +16,6 @@ const defaultState = {
 
 const common = (state = defaultState, action) => {
   switch (action.type) {
-    case keyTypes.APP_LOADED:
-      return {
-        ...state,
-        loaded: true,
-      }
     case keyTypes.DROP_COUNTER:
       return {
         ...state,

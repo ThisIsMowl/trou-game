@@ -1,9 +1,5 @@
 import keyTypes from '../keyTypes'
 
-const appLoaded = () => ({
-  type: keyTypes.APP_LOADED,
-})
-
 const changePlayer = () => ({
   type: keyTypes.CHANGE_PLAYER,
 })
@@ -27,7 +23,6 @@ const dropCounter = (x, y) => ({
 })
 
 export default {
-  appLoaded,
   changeTargetColumn,
   changeTargetField,
   dropCounter,
