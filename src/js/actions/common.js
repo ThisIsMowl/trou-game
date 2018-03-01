@@ -26,6 +26,5 @@ export default {
   changeTargetColumn,
   changeTargetField,
   dropCounter,
-  changePlayer,
   restartGame,
 }
