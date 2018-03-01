@@ -1,15 +1,17 @@
 import keyTypes from '../keyTypes'
 
+const blankBoard = [
+  [0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0],
+]
+
 const defaultState = {
-  boardState: [
-    [0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0],
-  ],
+  boardState: blankBoard,
   currentPlayer: 1,
   gameActive: true,
   gameWinner: null,
@@ -24,6 +26,14 @@ const common = (state = defaultState, action) => {
         gameWinner: action.winner ? action.winner : null,
         gameActive: action.winner ? false : true,
         currentPlayer: (state.currentPlayer === 1) ? 2 : 1,
+      }
+    case keyTypes.RESTART_GAME:
+      return {
+        ...state,
+        boardState: blankBoard,
+        gameWinner: null,
+        gameActive: true,
+        currentPlayer: 1,
       }
     default:
       return state
