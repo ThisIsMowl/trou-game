@@ -6,6 +6,7 @@ import '../css/App.css'
 
 import GameBoard from './components/gamePieces/GameBoard'
 import WinnerText from './components/WinnerText'
+import RestartButton from './components/RestartButton'
 
 const mapState = state => ({
   gameWinner: state.common.gameWinner,
@@ -19,6 +20,7 @@ class App extends Component {
         <div className="container">
           <GameBoard />
           <WinnerText gameWinner={gameWinner} />
+          <RestartButton gameWinner={gameWinner} />
         </div>
       </div>
     );
