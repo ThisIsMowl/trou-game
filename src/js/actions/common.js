@@ -4,6 +4,10 @@ const changePlayer = () => ({
   type: keyTypes.CHANGE_PLAYER,
 })
 
+const restartGame = () => ({
+  
+})
+
 const changeTargetColumn = (column, payload) => ({
   type: keyTypes.CHANGE_TARGET_COLUMN,
   column,

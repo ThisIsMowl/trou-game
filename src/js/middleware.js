@@ -9,7 +9,7 @@ const checkWinState = (gameBoard, playerNo) => {
   for (let i = 0; i < 7; i += 1) {
     for (let j = 0; j < 6; j += 1) {
       count = (gameBoard[i][j] === playerNo) ? count + 1 : 0
-      if (count === 4) return true
+      if (count === 4) return playerNo
     }
   }
 
@@ -17,7 +17,7 @@ const checkWinState = (gameBoard, playerNo) => {
   for (let j = 0; j < 6; j += 1) {
     for (let i = 0; i < 7; i += 1) {
       count = (gameBoard[i][j] === playerNo) ? count + 1 : 0
-      if (count === 4) return true
+      if (count === 4) return playerNo
     }
   }
 
@@ -27,7 +27,7 @@ const checkWinState = (gameBoard, playerNo) => {
   for (let rowStart = 0; rowStart < (6 - 4); rowStart += 1) {
     for (let row = rowStart, col = 0; row < 6 && col < 7; row += 1, col += 1) {
       count = (gameBoard[col][row] === playerNo) ? count + 1 : 0
-      if (count === 4) return true
+      if (count === 4) return playerNo
     }
   }
 
@@ -36,11 +36,11 @@ const checkWinState = (gameBoard, playerNo) => {
   for (let colStart = 1; colStart < (7 - 4); colStart += 1) {
     for (let row = 0, col = colStart; row < 6 && col < 7; row += 1, col += 1) {
       count = (gameBoard[col][row] === playerNo) ? count + 1 : 0
-      if (count === 4) return true
+      if (count === 4) return playerNo
     }
   }
 
-  return false
+  return null
 }
 
 // Middleware for handling CHANGE_TARGET_COLUMN action.
@@ -69,11 +69,6 @@ const dropCounterMiddleware = store => next => (action) => {
 
       // Check if there is a winner
       action.winner = checkWinState(boardState, currentPlayer)
-
-      if (!action.winner) {
-        // Change player
-        store.dispatch(common.changePlayer())
-      }
     }
   }
   next(action)

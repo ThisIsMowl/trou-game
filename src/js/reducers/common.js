@@ -12,6 +12,7 @@ const defaultState = {
   ],
   currentPlayer: 1,
   gameActive: true,
+  gameWinner: null,
 }
 
 const common = (state = defaultState, action) => {
@@ -20,6 +21,9 @@ const common = (state = defaultState, action) => {
       return {
         ...state,
         boardState: action.payload ? action.payload : state.boardState,
+        gameWinner: action.winner ? action.winner : null,
+        gameActive: action.winner ? false : true,
+        currentPlayer: (state.currentPlayer === 1) ? 2 : 1,
       }
     case keyTypes.CHANGE_PLAYER:
       return {
