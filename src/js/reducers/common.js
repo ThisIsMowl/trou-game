@@ -25,11 +25,6 @@ const common = (state = defaultState, action) => {
         gameActive: action.winner ? false : true,
         currentPlayer: (state.currentPlayer === 1) ? 2 : 1,
       }
-    case keyTypes.CHANGE_PLAYER:
-      return {
-        ...state,
-        currentPlayer: state.currentPlayer === 1 ? 2 : 1,
-      }
     default:
       return state
   }

@@ -1,11 +1,7 @@
 import keyTypes from '../keyTypes'
 
-const changePlayer = () => ({
-  type: keyTypes.CHANGE_PLAYER,
-})
-
 const restartGame = () => ({
-  
+  type: keyTypes.RESTART_GAME,
 })
 
 const changeTargetColumn = (column, payload) => ({
@@ -31,4 +27,5 @@ export default {
   changeTargetField,
   dropCounter,
   changePlayer,
+  restartGame,
 }
