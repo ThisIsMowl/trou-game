@@ -21,10 +21,11 @@ const checkWinState = (gameBoard, playerNo) => {
     }
   }
 
-  // Check diagonally
+  // Check diagonally, top left to bottom right
+
   // Part 1: Bottom lines
 
-  for (let rowStart = 0; rowStart < (6 - 4); rowStart += 1) {
+  for (let rowStart = 0; rowStart <= (6 - 4); rowStart += 1) {
     for (let row = rowStart, col = 0; row < 6 && col < 7; row += 1, col += 1) {
       count = (gameBoard[col][row] === playerNo) ? count + 1 : 0
       if (count === 4) return playerNo
@@ -33,8 +34,28 @@ const checkWinState = (gameBoard, playerNo) => {
 
   // Part 2: Top lines
 
-  for (let colStart = 1; colStart < (7 - 4); colStart += 1) {
+  for (let colStart = 1; colStart <= (7 - 4); colStart += 1) {
     for (let row = 0, col = colStart; row < 6 && col < 7; row += 1, col += 1) {
+      count = (gameBoard[col][row] === playerNo) ? count + 1 : 0
+      if (count === 4) return playerNo
+    }
+  }
+
+  // Check diagonally, bottom left to top right
+
+  // Part 1, top lines
+
+  for (let rowStart = (5 - 2); rowStart < 7; rowStart += 1) {
+    for (let row = rowStart, col = 0; row >= 0 && col < 7; row -= 1, col += 1) {
+      count = (gameBoard[col][row] === playerNo) ? count + 1 : 0
+      if (count === 4) return playerNo
+    }
+  }
+
+  // Part 2, bottom lines
+
+  for (let colStart = 1; colStart <= (7 - 4); colStart += 1) {
+    for (let row = 6, col = colStart; row >= 0 && col < 7; row -= 1, col += 1) {
       count = (gameBoard[col][row] === playerNo) ? count + 1 : 0
       if (count === 4) return playerNo
     }
