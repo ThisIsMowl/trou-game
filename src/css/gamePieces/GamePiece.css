@@ -6,11 +6,11 @@
 }
 
 .game-piece--player1 {
-  background-color: rgb(72,120,205);
+  background-color: rgb(119, 121, 236);
 }
 
 .game-piece--player2 {
-  background-color: rgb(254, 253, 51);
+  background-color: rgb(255, 111, 188);
 }
 
 .selection-piece {
