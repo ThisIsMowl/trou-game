@@ -29,11 +29,16 @@ const common = (state = defaultState, action) => {
       }
     case keyTypes.RESTART_GAME:
       return {
-        ...state,
-        boardState: blankBoard,
-        gameWinner: null,
-        gameActive: true,
-        currentPlayer: 1,
+        ...defaultState,
+        boardState: [
+          [0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0],
+        ],
       }
     default:
       return state

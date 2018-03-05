@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import common from '../actions/common'
 
 const mapDispatch = dispatch => ({
-  restartGame:
+  restartGame: () =>
     dispatch(common.restartGame()),
 })
 
