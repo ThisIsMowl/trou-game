@@ -1,11 +1,10 @@
 import React from 'react'
 
+import '../../css/Header.css'
+
 const Header = () => (
   <div className="game-header">
-    <h1 className="center-text">Trou Game</h1>
-    <p>
-      Here is the game I was talking about.
-    </p>
+    <h1 className="text-center">Trou Game</h1>
   </div>
 )
 

@@ -2,6 +2,57 @@ body {
   background-color: #999;
 }
 
-.container {
+.game-holder {
   background-color: #bbb;
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin: 0 auto;
+}
+
+.content {
+  width: 90%;
+  margin: 20px auto;
+}
+
+@media screen and (max-width: 1900px) {
+  .game-holder {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 1700px) {
+  .game-holder {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .game-holder {
+    width: 55%;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .game-holder {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 1275px) {
+  .game-holder {
+    width: 65%;
+  }
+}
+
+@media screen and (max-width: 1175px) {
+  .game-holder {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .game-holder {
+    width: 75%;
+  }
 }

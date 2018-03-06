@@ -8,9 +8,11 @@ import Header from './components/Header'
 
 const App = () => (
   <div className="App">
-    <div className="container">
-      <Header />
-      <GameplayContainer />
+    <div className="game-holder">
+      <div className="content">
+        <Header />
+        <GameplayContainer />
+      </div>
     </div>
   </div>
 )
