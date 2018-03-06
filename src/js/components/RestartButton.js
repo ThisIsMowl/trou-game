@@ -18,15 +18,9 @@ class RestartButton extends React.Component {
   }
 
   render() {
-    const { gameWinner } = this.props
-
-    if (gameWinner) {
-      return (
-        <button type="button" onClick={this.restartGame}>Restart</button>
-      )
-    }
-
-    return null
+    return (
+      <button type="button" onClick={this.restartGame}>Restart</button>
+    )
   }
 }
 

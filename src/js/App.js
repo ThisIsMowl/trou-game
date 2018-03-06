@@ -20,7 +20,7 @@ class App extends Component {
         <div className="container">
           <GameBoard />
           <WinnerText gameWinner={gameWinner} />
-          <RestartButton gameWinner={gameWinner} />
+          <RestartButton />
         </div>
       </div>
     );
