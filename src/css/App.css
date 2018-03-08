@@ -56,3 +56,75 @@ body {
     width: 75%;
   }
 }
+
+@media screen and (max-width: 992px) {
+  .game-holder {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 883px) {
+  .game-holder {
+    width: 65%;
+  }
+}
+
+@media screen and (max-width: 815px) {
+  .game-holder {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .game-holder {
+    width: 65%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .game-holder {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .game-holder {
+    width: 65%;
+  }
+}
+
+@media screen and (max-width: 590px) {
+  .game-holder {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 545px) {
+  .game-holder {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .game-holder {
+    width: 75%;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .game-holder {
+    width: 75%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .game-holder {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .game-holder {
+    width: 85%;
+  }
+}
