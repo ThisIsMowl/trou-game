@@ -12,3 +12,7 @@
 .game-piece--player2 {
   background-color: rgb(255, 111, 188);
 }
+
+.selection-piece {
+  background-color: grey;
+}

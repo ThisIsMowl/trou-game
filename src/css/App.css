@@ -3,7 +3,7 @@ body {
 }
 
 .game-holder {
-  background-color: #bbb;
+  background-color: #ddd;
   display: flex;
   flex-direction: column;
   width: 40%;
