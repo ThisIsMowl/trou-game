@@ -10,9 +10,20 @@ import '../css/App.css'
 import GameplayContainer from './components/GameplayContainer'
 import Header from './components/Header'
 
+const mapState = state => ({
+  targetColumn: state.gameplayReducer.targetColumn,
+  targetField: state.gameplayReducer.targetField,
+  boardState: state.common.boardState,
+  gameActive: state.common.gameActive,
+})
+
 const mapDispatch = dispatch => ({
   restartGame: () =>
     dispatch(common.restartGame()),
+  changeTargetColumn: (column, payload) =>
+    dispatch(common.changeTargetColumn(column, payload)),
+  dropCounter: (x, y) =>
+    dispatch(common.dropCounter(x, y)),
 })
 
 class App extends React.Component {
@@ -22,15 +33,29 @@ class App extends React.Component {
     this.restartGame = () => {
       this.props.restartGame()
     }
+
+    this.changeTargetColumn = (column, payload, gameActive) => {
+      if (gameActive) return this.props.changeTargetColumn(column, payload)
+      return null
+    }
+    this.dropCounter = (x, y, gameActive) => {
+      if (gameActive) return this.props.dropCounter(x, y)
+      return null
+    }
+  }
+
+  handleCounterDrop(x) {
+    this.changeTargetColumn(this.props.boardState[x-1], x-1, this.props.gameActive)
+    this.dropCounter(this.props.targetField[0], this.props.targetField[1], this.props.gameActive)
   }
 
   onKeyDown(keyName, e, handler) {
     e.preventDefault()
-    let lastLetter = keyName.slice((keyName.length) - 1)
+    let keyEnd = keyName.slice((keyName.length) - 1)
 
-    if (parseInt(lastLetter, 10)) {
-      console.log(`drop counter #${lastLetter}`)
-    } else if (lastLetter === "a") {
+    if (parseInt(keyEnd, 10)) {
+      this.handleCounterDrop(keyEnd)
+    } else if (keyEnd === "a") {
       this.restartGame()
     }
   }
@@ -65,4 +90,4 @@ class App extends React.Component {
   }
 }
 
-export default connect(() => ({}), mapDispatch)(App)
+export default connect(mapState, mapDispatch)(App)
