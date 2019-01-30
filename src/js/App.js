@@ -55,7 +55,7 @@ class App extends React.Component {
 
     if (parseInt(keyEnd, 10)) {
       this.handleCounterDrop(keyEnd)
-    } else if (keyEnd === "a") {
+    } else if (keyEnd === "x") {
       this.restartGame()
     }
   }
@@ -65,8 +65,8 @@ class App extends React.Component {
     return (
       <Hotkeys
         keyName="
-        ctrl+a,
-        command+a,
+        ctrl+x,
+        command+x,
         1,
         2,
         3,
