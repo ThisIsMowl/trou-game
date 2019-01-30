@@ -15,6 +15,7 @@ const defaultState = {
   currentPlayer: 1,
   gameActive: true,
   gameWinner: null,
+  keyDown: false,
 }
 
 const common = (state = defaultState, action) => {
