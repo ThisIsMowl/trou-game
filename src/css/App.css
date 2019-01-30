@@ -15,6 +15,10 @@ body {
   margin: 20px auto;
 }
 
+.win-text {
+  margin-top:30px;
+}
+
 @media screen and (max-width: 1900px) {
   .game-holder {
     width: 45%;
