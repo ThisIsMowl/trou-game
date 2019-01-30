@@ -24,16 +24,32 @@ class App extends React.Component {
     }
   }
 
-  onKeyDown(keyName, e, handle) {
+  onKeyDown(keyName, e, handler) {
     e.preventDefault()
-    this.restartGame()
+    let lastLetter = keyName.slice((keyName.length) - 1)
+
+    if (parseInt(lastLetter, 10)) {
+      console.log(`drop counter #${lastLetter}`)
+    } else if (lastLetter === "a") {
+      this.restartGame()
+    }
   }
 
 
   render() {
     return (
       <Hotkeys
-        keyName="ctrl+a,command+a"
+        keyName="
+        ctrl+a,
+        command+a,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+        "
         onKeyDown={this.onKeyDown.bind(this)}
       >
         <div className="App">
