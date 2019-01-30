@@ -3,6 +3,7 @@ const keyTypes = ({
   CHANGE_TARGET_FIELD: 'CHANGE_TARGET_FIELD',
   DROP_COUNTER: 'DROP_COUNTER',
   RESTART_GAME: 'RESTART_GAME',
+  KEY_DOWN: 'KEY_DOWN',
 })
 
 export default keyTypes
